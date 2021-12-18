@@ -1,0 +1,16 @@
+<input  [(ngModel)]="searchText" placeholder="search text">
+<table border="1">
+ <thead>
+ <th>Country Name</th>
+<th>Capital Name</th>
+<th>Flag</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let i of (cData | filter:searchText)">
+      <td>{{i.name.official}}</td>
+      <td>{{i.capital}}</td>
+      <td><img src="{{i.flags.png}}"></td>
+    </tr>
+  </tbody>
+</table>
+
